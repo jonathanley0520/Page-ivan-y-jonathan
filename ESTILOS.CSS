@@ -12,13 +12,13 @@ section{
     background:url(/IMAGENES/wallhaven-0w396r.jpg);
     background-size: cover;
     background-position: center;
-    animation: animatebg 5s linear infinite;
+    /* animation: animatebg 5s linear infinite; */
 }
-@keyframes animatebg{
+/* @keyframes animatebg{ 
     100%{
          filter:hue-rotate(360deg);
     }
-}
+}*/
 .caja-login{
     position: relative;
     width: 400px;
