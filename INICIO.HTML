@@ -10,7 +10,7 @@
 <body>
     <section>
     <div class="caja-login">
-        <form action="">
+        <form id="login-form" action="">
             <h2>LOGIN</h2>
             <div class="caja-input">
                 <span class="icono"><ion-icon name="mail"></ion-icon></span>
@@ -26,7 +26,7 @@
                 <label ><input type="checkbox">Recuerdame</label>
                 <a href="#">Olvidé mi contraseña</a>
             </div>
-            <button id="button" type="submit">Ingresar</button>
+            <button id="button" type="button" onclick="validarcredenciales()">Ingresar</button>
             <div class="link-registro">
                 <p>¿No tienes cuenta? <a href="#">Registrarse</a></p>
             </div>
