@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     motoDiv.classList.add("hidden");
     bicicletaDiv.classList.add("hidden");
   
-    const vehiculoSelect = document.getElementById("vehiculo");
+    const vehiculoSelect = document.getElementsByName("tiene_vehiculo");
     vehiculoSelect.addEventListener("change", function() {
       if (this.value === "carro") {
         carroDiv.classList.remove("hidden");
