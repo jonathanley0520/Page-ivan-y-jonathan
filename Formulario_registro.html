@@ -1,0 +1,103 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/">
+    <title>Registro</title>
+
+</head>
+<body>
+      <h1>Formulario de Registro SENA</h1>
+      <form>
+        <label for="nombres">Nombres:</label>
+        <input type="text" id="nombres" name="nombres" required>
+    
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+    
+        <label for="tipo_identificacion">Tipo de Identificación:</label>
+        <select id="tipo_identificacion" name="tipo_identificacion" required>
+          <option value="">Seleccione...</option>
+          <option value="cedula">Cédula de Ciudadanía</option>
+          <option value="tarjeta_identidad">Tarjeta de Identidad</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+    
+        <label for="numero_documento">Número de Documento:</label>
+        <input type="text" id="numero_documento" name="numero_documento" required>
+    
+        <label for="rol">Rol:</label>
+        <select id="rol" name="rol" required>
+          <option value="">Seleccione...</option>
+          <option value="aprendiz">Aprendiz</option>
+          <option value="instructor">Instructor</option>
+          <option value="administrativo">Administrativo</option>
+          <option value="visitante">Visitante</option>
+        </select>
+    
+        <div id="aprendiz" class="hidden">
+          <label for="titulada">Titulada:</label>
+          <input type="text" id="titulada" name="titulada">
+    
+          <label for="ficha">Ficha:</label>
+          <input type="text" id="ficha" name="ficha">
+    
+          <label for="jornada">Jornada:</label>
+          <select id="jornada" name="jornada">
+            <option value="">Seleccione...</option>
+            <option value="manana">Mañana</option>
+            <option value="tarde">Tarde</option>
+            <option value="noche">Noche</option>
+          </select>
+        </div>
+    
+        <label for="equipo_computo">¿Trae equipo de cómputo?</label>
+        <input type="radio" id="si_equipo" name="equipo_computo" value="si">
+        <label for="si_equipo">Sí</label>
+        <input type="radio" id="no_equipo" name="equipo_computo" value="no">
+        <label for="no_equipo">No</label>
+    
+        <div id="equipo_computo" class="hidden">
+          <label for="marca_equipo">Marca del equipo:</label>
+          <input type="text" id="marca_equipo" name="marca_equipo">
+    
+          <label for="serial_equipo">Número Serial:</label>
+          <input type="text" id="serial_equipo" name="serial_equipo">
+    
+          <label for="color_equipo">Color:</label>
+          <input type="text" id="color_equipo" name="color_equipo">
+        </div>
+    
+        <div id="vehiculo" class="hidden">
+          <label for="tiene_vehiculo">¿Trae vehículo?</label>
+          <input type="radio" id="si_vehiculo" name="tiene_vehiculo" value="si">
+          <label for="si_vehiculo">Sí</label>
+          <input type="radio" id="no_vehiculo" name="tiene_vehiculo" value="no">
+          <label for="no_vehiculo">No</label>
+        </div>
+    
+        <div id="carro" class="hidden">
+          <label for="placa_carro">Número de Placa:</label>
+          <input type="text" id="placa_carro" name="placa_carro">
+        </div>
+    
+        <div id="moto" class="hidden">
+          <label for="placa_moto">Número de Placa:</label>
+          <input type="text" id="placa_moto" name="placa_moto">
+        </div>
+    
+        <div id="bicicleta" class="hidden">
+          <label for="color_bicicleta">Color:</label>
+          <input type="text" id="color_bicicleta" name="color_bicicleta">
+    
+          <label for="serial_bicicleta">Número Serial:</label>
+          <input type="text" id="serial_bicicleta" name="serial_bicicleta">
+        </div>
+    
+        <button type="submit">Registrar</button>
+      </form>
+    
+      <script src="./Script_formulario_registro.js"></script>    
+</body>
+</html>
