@@ -3,7 +3,7 @@ function validarcredenciales() {
   var password = document.getElementById("contraseña").value;
 
   // Verificar si las credenciales son válidas.
-  if (username === "jonathan@gmail.com" && password === "12345") {
+  if (username === "jonathan" && password === "12345") {
     // Redirigir a la otra página.
 
     window.location.href = "Formulario_registro.html";

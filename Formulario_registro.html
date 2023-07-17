@@ -8,96 +8,101 @@
 
 </head>
 <body>
-      <h1>Formulario de Registro SENA</h1>
-      <form>
-        <label for="nombres">Nombres:</label>
-        <input type="text" id="nombres" name="nombres" required>
-    
-        <label for="apellidos">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" required>
-    
-        <label for="tipo_identificacion">Tipo de Identificación:</label>
-        <select id="tipo_identificacion" name="tipo_identificacion" required>
-          <option value="">Seleccione...</option>
-          <option value="cedula">Cédula de Ciudadanía</option>
-          <option value="tarjeta_identidad">Tarjeta de Identidad</option>
-          <option value="pasaporte">Cedula estrangeria</option>
-        </select>
-    
-        <label for="numero_documento">Número de Documento:</label>
-        <input type="text" id="numero_documento" name="numero_documento" required>
-    
-        <label for="rol">Rol:</label>
-        <select id="rol" name="rol" required>
-          <option value="">Seleccione...</option>
-          <option value="aprendiz">Aprendiz</option>
-          <option value="instructor">Instructor</option>
-          <option value="administrativo">Administrativo</option>
-          <option value="visitante">Visitante</option>
-        </select>
-    
-        <div id="aprendiz" class="hidden">
-          <label for="titulada">Titulada:</label>
-          <input type="text" id="titulada" name="titulada">
-    
-          <label for="ficha">Ficha:</label>
-          <input type="text" id="ficha" name="ficha">
-    
-          <label for="jornada">Jornada:</label>
-          <select id="jornada" name="jornada">
-            <option value="">Seleccione...</option>
-            <option value="manana">Mañana</option>
-            <option value="tarde">Tarde</option>
-            <option value="noche">Noche</option>
-          </select>
+  <div class="container">
+    <form id="registration-form">
+        <h2>Formulario de Registro</h2>
+        <div class="form-group">
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" required>
         </div>
-    
-        <label for="equipo_computo">¿Trae equipo de cómputo?</label>
-        <input type="radio" id="si_equipo" name="equipo_computo" value="si">
-        <label for="si_equipo">Sí</label>
-        <input type="radio" id="no_equipo" name="equipo_computo" value="no">
-        <label for="no_equipo">No</label>
-    
-        <div id="equipo_computo" class="hidden">
-          <label for="marca_equipo">Marca del equipo:</label>
-          <input type="text" id="marca_equipo" name="marca_equipo">
-    
-          <label for="serial_equipo">Número Serial:</label>
-          <input type="text" id="serial_equipo" name="serial_equipo">
-    
-          <label for="color_equipo">Color:</label>
-          <input type="text" id="color_equipo" name="color_equipo">
+        <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" required>
         </div>
-    
-        <div id="vehiculo" class="hidden">
-          <label for="tiene_vehiculo">¿Trae vehículo?</label>
-          <input type="radio" id="si_vehiculo" name="tiene_vehiculo" value="si">
-          <label for="si_vehiculo">Sí</label>
-          <input type="radio" id="no_vehiculo" name="tiene_vehiculo" value="no">
-          <label for="no_vehiculo">No</label>
+        <div class="form-group">
+            <label for="tipo-documento">Tipo de Documento:</label>
+            <select id="tipo-documento">
+                <option value="">-- Seleccione --</option>
+                <option value="cc">Cédula de Ciudadanía</option>
+                <option value="ce">Cédula Extranjera</option>
+                <option value="ti">Tarjeta de Identidad</option>
+            </select>
         </div>
-    
-        <div id="carro" class="hidden">
-          <label for="placa_carro">Número de Placa:</label>
-          <input type="text" id="placa_carro" name="placa_carro">
+        <div class="form-group">
+            <label for="numero-documento">Número de Documento:</label>
+            <input type="text" id="numero-documento" required>
         </div>
-    
-        <div id="moto" class="hidden">
-          <label for="placa_moto">Número de Placa:</label>
-          <input type="text" id="placa_moto" name="placa_moto">
+        <div class="form-group">
+            <label for="roll">Roll:</label>
+            <select id="roll" onchange="showAdditionalFields()">
+                <option value="">-- Seleccione --</option>
+                <option value="aprendiz">Aprendiz</option>
+                <option value="instructor">Instructor</option>
+                <option value="administrativo">Administrativo</option>
+                <option value="visitante">Visitante</option>
+            </select>
         </div>
-    
-        <div id="bicicleta" class="hidden">
-          <label for="color_bicicleta">Color:</label>
-          <input type="text" id="color_bicicleta" name="color_bicicleta">
-    
-          <label for="serial_bicicleta">Número Serial:</label>
-          <input type="text" id="serial_bicicleta" name="serial_bicicleta">
+        <div class="form-group" id="aprendiz-fields">
+            <label for="nombre-titulada">Nombre de Titulada:</label>
+            <input type="text" id="nombre-titulada">
+            <label for="ficha-titulada">Ficha de Titulada:</label>
+            <input type="text" id="ficha-titulada">
+            <label for="jornada">Jornada:</label>
+            <select id="jornada">
+                <option value="">-- Seleccione --</option>
+                <option value="manana">Mañana</option>
+                <option value="tarde">Tarde</option>
+                <option value="noche">Noche</option>
+            </select>
         </div>
-    
-        <button type="submit">Registrar</button>
-      </form>
-    
-      <script src="./Script_formulario_registro.js"></script>    
+        <div class="form-group">
+            <label for="trae-equipo">¿Trae equipo?:</label>
+            <select id="trae-equipo" onchange="showEquipmentFields()">
+                <option value="">-- Seleccione --</option>
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+        <div class="form-group" id="equipo-fields">
+            <label for="numero-serial">Número Serial:</label>
+            <input type="text" id="numero-serial">
+            <label for="marca-equipo">Marca del Equipo:</label>
+            <input type="text" id="marca-equipo">
+            <label for="color-equipo">Color del Equipo:</label>
+            <input type="text" id="color-equipo">
+        </div>
+        <div class="form-group">
+            <label for="trae-vehiculo">¿Trae vehículo?:</label>
+            <select id="trae-vehiculo" onchange="showVehicleFields()">
+                <option value="">-- Seleccione --</option>
+                <option value="no">No</option>
+                <option value="si">Sí</option>
+            </select>
+        </div>
+        <div class="form-group" id="vehiculo-fields">
+            <label for="tipo-vehiculo">Tipo de Vehículo:</label>
+            <select id="tipo-vehiculo" onchange="updateBicycleFields()">
+                <option value="">-- Seleccione --</option>
+                <option value="carro">Carro</option>
+                <option value="moto">Moto</option>
+                <option value="bicicleta">Bicicleta</option>
+            </select>
+            <label for="marca-vehiculo" id="marca-vehiculo-label">Marca del Vehículo:</label>
+            <input type="text" id="marca-vehiculo">
+            <label for="placa-vehiculo" id="placa-vehiculo-label">Placa del Vehículo:</label>
+            <input type="text" id="placa-vehiculo">
+            <label for="color-bicicleta" id="color-bicicleta-label">Color de la Bicicleta:</label>
+            <input type="text" id="color-bicicleta">
+            <label for="serial-bicicleta" id="serial-bicicleta-label">Serial de la Bicicleta:</label>
+            <input type="text" id="serial-bicicleta">
+        </div>
+        <div class="form-group">
+            <button type="button" onclick="clearForm()">Limpiar</button>
+            <button type="submit">Registrar</button>
+        </div>
+    </form>
+</div>
+
+<script src="/Script_formulario_registro.js"></script>
 </body>
 </html>
